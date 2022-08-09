@@ -3,24 +3,33 @@ Pandoc
     { unMeta =
         fromList
           [ ( "author" , MetaInlines [ Str "Nullus" ] )
-          , ( "subtitle"
+          , ( "bibliography"
+            , MetaInlines [ Str "test/example.bib" ]
+            )
+          , ( "nocite"
+            , MetaInlines
+                [ Span
+                    ( "cite_1" , [] , [] )
+                    [ Cite
+                        [ Citation
+                            { citationId = "*"
+                            , citationPrefix = []
+                            , citationSuffix = []
+                            , citationMode = AuthorInText
+                            , citationNoteNum = 1
+                            , citationHash = 0
+                            }
+                        ]
+                        [ Str "@*" ]
+                    ]
+                ]
+            )
+          , ( "title"
             , MetaInlines [ Str "Lorem" , Space , Str "ipsum" ]
             )
-          , ( "title" , MetaInlines [ Str "Greetings!" ] )
           ]
     }
   [ Para
-      [ Str "Hello"
-      , Space
-      , Str "from"
-      , Space
-      , Str "the"
-      , Space
-      , Str "Lua"
-      , Space
-      , Str "filter!"
-      ]
-  , Para
       [ Str "Lorem"
       , Space
       , Str "ipsum"
@@ -57,7 +66,30 @@ Pandoc
       , Space
       , Str "quam"
       , SoftBreak
-      , Str "nisl,"
+      , Str "nisl"
+      , Space
+      , Span
+          ( "cite_2" , [] , [] )
+          [ Cite
+              [ Citation
+                  { citationId = "krewinkel2017"
+                  , citationPrefix = []
+                  , citationSuffix = []
+                  , citationMode = AuthorInText
+                  , citationNoteNum = 2
+                  , citationHash = 0
+                  }
+              ]
+              [ Str "Krewinkel"
+              , Space
+              , Str "and"
+              , Space
+              , Str "Winkler"
+              , Space
+              , Str "(2017)"
+              ]
+          ]
+      , Str ","
       , Space
       , Str "tincidunt"
       , Space
@@ -70,7 +102,87 @@ Pandoc
       , Str "convallis"
       , Space
       , Str "nec,"
-      , Space
+      , SoftBreak
       , Str "purus."
+      ]
+  , Div
+      ( "refs"
+      , [ "references" , "csl-bib-body" , "hanging-indent" ]
+      , []
+      )
+      [ Div
+          ( "ref-krewinkel2017" , [ "csl-entry" ] , [] )
+          [ Para
+              [ Str "Krewinkel,"
+              , Space
+              , Str "Albert,"
+              , Space
+              , Str "and"
+              , Space
+              , Str "Robert"
+              , Space
+              , Str "Winkler."
+              , Space
+              , Str "2017."
+              , Space
+              , Span
+                  ( "" , [] , [] )
+                  [ Str "\8220"
+                  , Str "Formatting"
+                  , Space
+                  , Str "Open"
+                  , Space
+                  , Str "Science:"
+                  , Space
+                  , Str "Agilely"
+                  , Space
+                  , Str "Creating"
+                  , Space
+                  , Str "Multiple"
+                  , Space
+                  , Str "Document"
+                  , Space
+                  , Str "Formats"
+                  , Space
+                  , Str "for"
+                  , Space
+                  , Str "Academic"
+                  , Space
+                  , Str "Manuscripts"
+                  , Space
+                  , Str "with"
+                  , Space
+                  , Str "Pandoc"
+                  , Space
+                  , Str "Scholar"
+                  , Str "."
+                  , Str "\8221"
+                  ]
+              , Space
+              , Emph
+                  [ Str "PeerJ"
+                  , Space
+                  , Str "Computer"
+                  , Space
+                  , Str "Science"
+                  ]
+              , Space
+              , Str "3"
+              , Space
+              , Str "(May):"
+              , Space
+              , Str "e112."
+              , Space
+              , Link
+                  ( "" , [] , [] )
+                  [ Str "https://doi.org/10.7717/peerj-cs.112" ]
+                  ( "https://doi.org/10.7717/peerj-cs.112" , "" )
+              , Str "."
+              , Space
+              , Str "Cited:"
+              , Space
+              , Link ( "" , [] , [] ) [ Str "1" ] ( "#cite_2" , "" )
+              ]
+          ]
       ]
   ]

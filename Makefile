@@ -26,7 +26,8 @@ endif
 # The automatic variable `$<` refers to the first dependency
 # (i.e., the filter file).
 test: $(FILTER_FILE) test/input.md
-	$(PANDOC) --lua-filter=$< --to=native --standalone test/input.md | \
+	$(PANDOC) --citeproc --lua-filter=$< --to=native --standalone \
+	        test/input.md | \
 		$(DIFF) test/expected.native -
 
 # Ensure that the `test` target is run each time it's called.
@@ -36,8 +37,8 @@ test: $(FILTER_FILE) test/input.md
 # dependency of the `test` target, as that would cause it to be
 # regenerated on each run, making the test pointless.
 test/expected.native: $(FILTER_FILE) test/input.md
-	$(PANDOC) --lua-filter=$< --standalone --to=native --output=$@ \
-		test/input.md
+	$(PANDOC) --citeproc --lua-filter=$< --to=native --standalone \
+	        --output=$@ test/input.md
 
 #
 # Website
