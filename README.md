@@ -17,20 +17,7 @@ This filter should be invoked after `citeproc`, e.g.
 
     pandoc --citeproc --lua-filter citation-backlinks.lua ...
 
-Users of Quarto can install this filter as an extension with
-
-    quarto install extension tarleb/citation-backlinks
-
-and use it by adding `citation-backlinks` to the `filters` entry
-in their YAML header.
-
-```` yaml
----
-filters:
-  - citation-backlinks
----
-````
-
+The filter doesn't work yet as a Quarto extension.
 
 License
 ------------------------------------------------------------------
