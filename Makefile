@@ -76,7 +76,7 @@ _site/output.md: $(FILTER_FILE) test/input.md
 
 _site/$(FILTER_FILE): $(FILTER_FILE)
 	@mkdir -p _site
-	(cd docs && ln -sf ../$< $<)
+	(cd _site && ln -sf ../$< $<)
 
 #
 # Quarto extension
@@ -121,4 +121,4 @@ release: quarto-extension
 #
 .PHONY: clean
 clean:
-	rm -f docs/output.md docs/index.html docs/style.css
+	rm -f _site/output.md _site/index.html _site/style.css
