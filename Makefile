@@ -26,8 +26,7 @@ endif
 # The automatic variable `$<` refers to the first dependency
 # (i.e., the filter file).
 test: $(FILTER_FILE) test/input.md
-	$(PANDOC) --citeproc --lua-filter=$< --to=native --standalone \
-	        test/input.md | \
+	$(PANDOC) --defaults test/test.yaml | \
 		$(DIFF) test/expected.native -
 
 # Ensure that the `test` target is run each time it's called.
@@ -37,8 +36,7 @@ test: $(FILTER_FILE) test/input.md
 # dependency of the `test` target, as that would cause it to be
 # regenerated on each run, making the test pointless.
 test/expected.native: $(FILTER_FILE) test/input.md
-	$(PANDOC) --citeproc --lua-filter=$< --to=native --standalone \
-	        --output=$@ test/input.md
+	$(PANDOC) --defaults test/test.yaml --output=$@ test/input.md
 
 #
 # Website
@@ -68,11 +66,9 @@ _site/style.css:
 _site/output.md: $(FILTER_FILE) test/input.md
 	@mkdir -p _site
 	$(PANDOC) \
-	    --output=$@ \
-	    --lua-filter=$< \
-	    --to=markdown \
-	    --standalone \
-	    test/input.md
+	    --defaults=test/test.yaml \
+	    --to=markdown-citations \
+	    --output=$@
 
 _site/$(FILTER_FILE): $(FILTER_FILE)
 	@mkdir -p _site

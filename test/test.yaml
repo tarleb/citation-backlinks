@@ -1,0 +1,11 @@
+input-files:
+  - test/input.md
+
+to: native
+
+filters:
+  - type: citeproc
+  - type: lua
+    path: citation-backlinks.lua
+
+standalone: true
