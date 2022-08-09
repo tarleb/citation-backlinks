@@ -28,6 +28,7 @@ in their YAML header.
 ---
 filters:
   - citation-backlinks
+---
 ````
 
 
