@@ -111,6 +111,48 @@ Pandoc
       , []
       )
       [ Div
+          ( "ref-quarto" , [ "csl-entry" ] , [] )
+          [ Para
+              [ Str "Allaire,"
+              , Space
+              , Str "J."
+              , Space
+              , Str "J.,"
+              , Space
+              , Str "Charles"
+              , Space
+              , Str "Teague,"
+              , Space
+              , Str "Carlos"
+              , Space
+              , Str "Scheidegger,"
+              , Space
+              , Str "Yihui"
+              , Space
+              , Str "Xie,"
+              , Space
+              , Str "and"
+              , Space
+              , Str "Christophe"
+              , Space
+              , Str "Dervieux."
+              , Space
+              , Str "2022."
+              , Space
+              , Emph [ Span ( "" , [] , [] ) [ Str "Quarto" ] ]
+              , Space
+              , Str "(version"
+              , Space
+              , Str "0.3)."
+              , Space
+              , Link
+                  ( "" , [] , [] )
+                  [ Str "https://doi.org/10.5281/zenodo.5960048" ]
+                  ( "https://doi.org/10.5281/zenodo.5960048" , "" )
+              , Str "."
+              ]
+          ]
+      , Div
           ( "ref-krewinkel2017" , [ "csl-entry" ] , [] )
           [ Para
               [ Str "Krewinkel,"
@@ -182,6 +224,100 @@ Pandoc
               , Str "Cited:"
               , Space
               , Link ( "" , [] , [] ) [ Str "1" ] ( "#cite_2" , "" )
+              ]
+          ]
+      , Div
+          ( "ref-smith2018" , [ "csl-entry" ] , [] )
+          [ Para
+              [ Str "Smith,"
+              , Space
+              , Str "Arfon"
+              , Space
+              , Str "M.,"
+              , Space
+              , Str "Kyle"
+              , Space
+              , Str "E."
+              , Space
+              , Str "Niemeyer,"
+              , Space
+              , Str "Daniel"
+              , Space
+              , Str "S."
+              , Space
+              , Str "Katz,"
+              , Space
+              , Str "Lorena"
+              , Space
+              , Str "A."
+              , Space
+              , Str "Barba,"
+              , Space
+              , Str "George"
+              , Space
+              , Str "Githinji,"
+              , Space
+              , Str "Melissa"
+              , Space
+              , Str "Gymrek,"
+              , Space
+              , Str "Kathryn"
+              , Space
+              , Str "D."
+              , Space
+              , Str "Huff,"
+              , Space
+              , Str "et"
+              , Space
+              , Str "al."
+              , Space
+              , Str "2018."
+              , Space
+              , Span
+                  ( "" , [] , [] )
+                  [ Str "\8220"
+                  , Str "Journal"
+                  , Space
+                  , Str "of"
+                  , Space
+                  , Str "Open"
+                  , Space
+                  , Str "Source"
+                  , Space
+                  , Str "Software"
+                  , Space
+                  , Str "(JOSS):"
+                  , Space
+                  , Str "Design"
+                  , Space
+                  , Str "and"
+                  , Space
+                  , Str "First-Year"
+                  , Space
+                  , Str "Review"
+                  , Str "."
+                  , Str "\8221"
+                  ]
+              , Space
+              , Emph
+                  [ Str "PeerJ"
+                  , Space
+                  , Str "Computer"
+                  , Space
+                  , Str "Science"
+                  ]
+              , Space
+              , Str "4"
+              , Space
+              , Str "(February):"
+              , Space
+              , Str "e147."
+              , Space
+              , Link
+                  ( "" , [] , [] )
+                  [ Str "https://doi.org/10.7717/peerj-cs.147" ]
+                  ( "https://doi.org/10.7717/peerj-cs.147" , "" )
+              , Str "."
               ]
           ]
       ]

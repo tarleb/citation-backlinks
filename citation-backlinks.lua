@@ -51,7 +51,7 @@ function Div(el)
   local citation_id = el.identifier:match("ref%-(.+)")
   if citation_id then
     local backlinks = pandoc.Inlines{pandoc.Str("Cited:"),pandoc.Space()}
-    for i,cite_id in ipairs(cites[citation_id]) do
+    for i,cite_id in ipairs(cites[citation_id] or {}) do
       local marker = pandoc.Str(i)
       if FORMAT == "latex" then
         marker = pandoc.RawInline("latex", "\\pageref{" .. cite_id .. "}")
@@ -62,7 +62,9 @@ function Div(el)
       end
       table.insert(backlinks, pandoc.Link(marker, "#"..cite_id))
     end
-    append_inline(el.content, {pandoc.Space()} .. backlinks)
+    if #backlinks > 2 then
+      append_inline(el.content, {pandoc.Space()} .. backlinks)
+    end
     return el
   end
 end
