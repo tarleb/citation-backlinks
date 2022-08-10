@@ -111,48 +111,6 @@ Pandoc
       , []
       )
       [ Div
-          ( "ref-quarto" , [ "csl-entry" ] , [] )
-          [ Para
-              [ Str "Allaire,"
-              , Space
-              , Str "J."
-              , Space
-              , Str "J.,"
-              , Space
-              , Str "Charles"
-              , Space
-              , Str "Teague,"
-              , Space
-              , Str "Carlos"
-              , Space
-              , Str "Scheidegger,"
-              , Space
-              , Str "Yihui"
-              , Space
-              , Str "Xie,"
-              , Space
-              , Str "and"
-              , Space
-              , Str "Christophe"
-              , Space
-              , Str "Dervieux."
-              , Space
-              , Str "2022."
-              , Space
-              , Emph [ Span ( "" , [] , [] ) [ Str "Quarto" ] ]
-              , Space
-              , Str "(version"
-              , Space
-              , Str "0.3)."
-              , Space
-              , Link
-                  ( "" , [] , [] )
-                  [ Str "https://doi.org/10.5281/zenodo.5960048" ]
-                  ( "https://doi.org/10.5281/zenodo.5960048" , "" )
-              , Str "."
-              ]
-          ]
-      , Div
           ( "ref-krewinkel2017" , [ "csl-entry" ] , [] )
           [ Para
               [ Str "Krewinkel,"

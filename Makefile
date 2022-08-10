@@ -35,8 +35,8 @@ test: $(FILTER_FILE) test/input.md
 # Re-generate the expected output. This file **must not** be a
 # dependency of the `test` target, as that would cause it to be
 # regenerated on each run, making the test pointless.
-test/expected.native: $(FILTER_FILE) test/input.md
-	$(PANDOC) --defaults test/test.yaml --output=$@ test/input.md
+test/expected.native: $(FILTER_FILE) test/input.md test/example.bib
+	$(PANDOC) --defaults test/test.yaml --output=$@
 
 #
 # Website
@@ -63,7 +63,7 @@ _site/style.css:
 	    --output $@ \
 	    'https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.css'
 
-_site/output.md: $(FILTER_FILE) test/input.md
+_site/output.md: $(FILTER_FILE) test/input.md test/example.bib
 	@mkdir -p _site
 	$(PANDOC) \
 	    --defaults=test/test.yaml \
